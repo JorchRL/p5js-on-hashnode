@@ -16,7 +16,6 @@
   "bugs": {
     "url": "https://github.com/JorchRL/p5js-on-hashnode/issues"
   },
-  "homepage": "https://github.com/JorchRL/p5js-on-hashnode#readme",
   "devDependencies": {
     "gh-pages": "^3.2.3"
   }

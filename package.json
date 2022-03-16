@@ -1,0 +1,23 @@
+{
+  "name": "p5-hashnode",
+  "version": "1.0.0",
+  "description": "Using the p5.js-widget",
+  "main": "index.js",
+  "homepage": "https://jorchrl.github.io/p5js-on-hashnode",
+  "scripts": {
+    "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JorchRL/p5js-on-hashnode.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JorchRL/p5js-on-hashnode/issues"
+  },
+  "homepage": "https://github.com/JorchRL/p5js-on-hashnode#readme",
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
+  }
+}

@@ -1,0 +1,62 @@
+<!--  ////// Usage ///////
+
+  Inside your markdown you would add:
+  
+  <div id="sketch-decorator" src="<the url for the p5 sketch>"></div>
+  %%[p5widget]
+
+  given that you have created the widget in hashnode's dashboard.
+    
+    
+-->
+
+<!-- <div id="sketch-decorator" src=""></div> -->
+  <!-- ////// widget code ////// -->
+  <pre id="widget-pre">
+  <!-- load the tool first -->
+  <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+   <!-- The generated <script> will be placed here. -->
+</pre>
+
+  <pre>
+  <script>
+    // Dynamically generate the <script type="text/p5"> element
+    let p5EditorScript = document.createElement("script");
+
+
+    let p5Sketch;
+    // This is how we implement the decorator.
+    try {
+      const p5Sketch = document
+      .getElementById("sketch-decorator")
+      .getAttribute("src");
+      // There is a weird bug when src is just "". Instead, any invalid url
+      // will show a 404 message on the editor. Still, normal use shouldn't 
+      // encounter this error.
+      p5EditorScript.setAttribute("src", p5Sketch !== "" ? p5Sketch : "a");
+    } catch {
+      const p5Sketch = ""  // default behaviour is no editor.
+      p5EditorScript.innerHTML += 
+      `
+function setup() {
+  createCanvas(100,100)
+}
+
+function draw () {
+  background(255,0,200)
+}
+`
+    }
+
+  
+    
+    // Add the necessary attibutes to the script element
+    p5EditorScript.setAttribute("type", "text/p5");
+    p5EditorScript.setAttribute("data-preview-width", "600");
+    p5EditorScript.setAttribute("data-height", "600");
+    
+    // Finally, attach it where it goes.
+    document.getElementById("widget-pre").appendChild(p5EditorScript)
+  </script>
+</pre>
+</div>
